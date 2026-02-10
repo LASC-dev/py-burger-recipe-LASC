@@ -54,8 +54,21 @@ class Number(Validator):
             )
 
 
-class OneOf:
-    pass
+class OneOf(Validator):
+    def __init__(
+        self,
+        *options
+    ):
+        self.options = set(options)
+
+    def validate(
+        self,
+        value: str
+    ):
+        if value not in self.options:
+            raise ValueError(
+                f"Expected {value} to be one of {self.options}."
+            )
 
 
 class BurgerRecipe:
