@@ -119,8 +119,8 @@ class Number(Validator):
             raise TypeError("Quantity should be integer.")
         elif value < self.min_value or value > self.max_value:
             raise ValueError(
-                f"Quantity should not be less than {self.min_value}",
-                f" and greater than {self.max_value}"
+                f"Quantity should not be less than {
+                    self.min_value} and greater than {self.max_value}"
             )
 
 
@@ -204,12 +204,6 @@ class BurgerRecipe:
             cutlets: Number of meat medallions.
             eggs: Number of eggs.
             sauce: Name of the sauce.
-            self.buns = buns
-            self.cheese = cheese
-            self.tomatoes = tomatoes
-            self.cutlets = cutlets
-            self.eggs = eggs
-            self.sauce = sauce
         """
         self.buns = buns
         self. cheese = cheese
